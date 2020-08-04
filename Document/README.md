@@ -7,7 +7,7 @@
 
 # OWASP ファームウェアセキュリティテスト手法
 
-![](.gitbook/assets/fstm_cover.png)
+![](gitbook/assets/fstm_cover.png)
 
 ネットワークに接続されているかスタンドアロンであるかにかかわらず、ファームウェアは組み込みデバイス制御の中核となります。そのため、ファームウェアがどのように操作されて不正な機能を実行し、サポートするエコシステムのセキュリティを無効にする可能性があるかを理解することが重要です。ファームウェアのセキュリティテストとリバースエンジニアリングの実行を開始するには、今後の評価に着手する際の指針として以下の手法を使用します。この手法はセキュリティ研究者、ソフトウェア開発者、コンサルタント、愛好家、および情報セキュリティ専門家がファームウェアセキュリティ評価を実施できるように仕立てた九つのステージで構成されています。
 
@@ -51,21 +51,21 @@
 
 可能であれば、オープンソースインテリジェンス \(OSINT\) ツールおよび技法を使用してデータを取得します。オープンソースソフトウェアを使用している場合には、そのリポジトリをダウンロードし、コードベースに対して手動と自動の両方の静的解析を実行します。場合により、オープンソースソフトウェアプロジェクトではすでに [Coverity Scan](https://scan.coverity.com/) や [Semmle's LGTM](https://lgtm.com/#explore) などのスキャン結果を提供するベンダーにより提供されるフリーの静的解析ツールを使用していることもあります。例えば、以下のスクリーンショットは [Das U-Boot](http://www.denx.de/wiki/U-Boot/WebHome) の Coverity Scan 結果の一部を示しています。
 
-![U-Boot Coverity Scan](.gitbook/assets/3.png)
+![U-Boot Coverity Scan](gitbook/assets/3.png)
 
 図 : U-Boot Coverity Scan
 
-![](.gitbook/assets/4.png)
+![](gitbook/assets/4.png)
 
 図 : U-Boot Coverity Scan Analysis
 
 以下は LGTM の解析による [Dropbear](https://github.com/mkj/dropbear) の結果のスクリーンショットです。
 
-![](.gitbook/assets/5.png)
+![](gitbook/assets/5.png)
 
 図 : LGTM Dropbear Alerts
 
-![](.gitbook/assets/6.png)
+![](gitbook/assets/6.png)
 
 図 : LGTM Dropbear Results
 
@@ -230,7 +230,7 @@ $ dd if=DIR850L_REVB.bin bs=1 skip=1704084 of=dir.squashfs
 
 以下の firmwalker の出力を参照します。
 
-![](.gitbook/assets/7.png)
+![](gitbook/assets/7.png)
 
 firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成されます。これらの出力ファイルは手動で確認する必要があります。
 
@@ -261,23 +261,23 @@ $ sudo ./start_all_installed_fact_components
 
 ブラウザで [http://127.0.0.1:5000](http://127.0.0.1:5000/) に移動します。
 
-![](.gitbook/assets/8.png)
+![](gitbook/assets/8.png)
 
 図 : FACT Dashboard
 
 解析のためにファームウェアコンポーネントを FACT にアップロードします。以下のスクリーンショットでは、ルートファイルシステムを有する圧縮された完全なファームウェアがアップロードされ解析されます。
 
-![](.gitbook/assets/9.png)
+![](gitbook/assets/9.png)
 
 図 : FACT Upload
 
 FACT に与えられたハードウェアリソースに応じて、解析結果は所定時間にスキャン結果とともに表示されます。最小限のリソースしか割り当てられていない場合、このプロセスは何時間もかかることがあります。
 
-![](.gitbook/assets/10.png)
+![](gitbook/assets/10.png)
 
 図 : FACT IoTGoat
 
-![](.gitbook/assets/11.png)
+![](gitbook/assets/11.png)
 
 図 : FACT IoTGoat Exploit Mitigation Results
 
@@ -285,7 +285,7 @@ IDA Pro, Ghidra, Hopper, Capstone, または Binary Ninja を使用して FACT �
 
 以下のスクリーンショットは Ghidra を使用して逆アセンブルされた "shellback" バイナリを示しています。
 
-![](.gitbook/assets/12.png)
+![](gitbook/assets/12.png)
 
 図 : Shellback Ghidra Analysis
 
@@ -350,7 +350,7 @@ RELRO           STACK CANARY      NX            PIE             RPATH      RUNPA
 Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   No Symbols      No    0        0    /home/embedos/firmware/_IoTGoat-x86-generic-combined-squashfs.img.extracted/squashfs-root/usr/bin/shellback
 ```
 
-![](.gitbook/assets/13.png)
+![](gitbook/assets/13.png)
 
 図 : checksec.sh
 
@@ -704,4 +704,4 @@ _注: ファームウェアに一般的ではない圧縮、ファイルシス�
 
 [Creative Commons Attribution Share Alike 4.0 International](https://github.com/scriptingxss/owasp-fstm/blob/master/License.md)
 
-![](.gitbook/assets/16.png) ![](.gitbook/assets/15.png) ![](.gitbook/assets/14.png)
+![](gitbook/assets/16.png) ![](gitbook/assets/15.png) ![](gitbook/assets/14.png)
