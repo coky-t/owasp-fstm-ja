@@ -10,3 +10,11 @@ This is the unofficial Japanese translation of the [OWASP Firmware Security Test
 ## OWASP ファームウェアセキュリティテスト手法 日本語版
 
 - [OWASP ファームウェアセキュリティテスト手法](Document/README.md)
+
+## License
+
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+
+## Author (日本語訳)
+
+[Koki Takeyama](https://github.com/coky-t)
