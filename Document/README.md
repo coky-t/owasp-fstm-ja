@@ -467,6 +467,7 @@ Content-Type: text/xml
 
 * [https://github.com/attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit)
 * [https://github.com/therealsaumil/armx/](https://github.com/therealsaumil/armx/)
+* [https://github.com/getCUJO/MIPS-X](https://github.com/getCUJO/MIPS-X)
 * [https://github.com/firmadyne/firmadyne](https://github.com/firmadyne/firmadyne)
 * [https://github.com/qilingframework/qiling\#qltool](https://github.com/qilingframework/qiling#qltool)
 
