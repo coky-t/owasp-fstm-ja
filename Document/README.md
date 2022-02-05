@@ -675,6 +675,7 @@ _注: ファームウェアに一般的ではない圧縮、ファイルシス�
 * [Capstone Engine](https://github.com/aquynh/capstone)
 * [Qiling Advanced Binary Emulation Framework](https://github.com/qilingframework/qiling)
 * [Triton dynamic binary analysis \(DBA\) framework](https://triton.quarkslab.com/)
+* [EMBA - The firmware security analyzer](https://github.com/e-m-b-a/emba)
 
 ### 脆弱性のあるファームウェア
 
