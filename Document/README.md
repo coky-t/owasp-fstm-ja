@@ -119,7 +119,7 @@ fdisk -lu <bin> #lists a drives partition and filesystems if multiple
 
 高エントロピー = 暗号化されている \(または何らかの方法で圧縮されている\) 可能性が高い
 
-> **Note:** As of 2024, Binwalk v3 has been completely rewritten in Rust, providing significantly faster analysis speeds and reduced false positives compared to earlier Python-based versions. The Rust implementation offers improved memory safety, better performance on large firmware images, and enhanced support for modern compression formats and filesystems \(NTFS, APFS\). The command syntax remains compatible with previous versions, making it a drop-in replacement for existing workflows. Installation is available via package managers \(Kali Linux, NixOS\) or the Rust package manager \(cargo\).
+> **注:** 2024 年の時点で、Binwalk v3 は Rust で完全に書き直され、以前の Python ベースのバージョンと比較して解析速度が大幅に向上し、誤検出が減少しました。Rust 実装ではメモリの安全性を向上し、大規模なファームウェアイメージでのパフォーマンスを向上し、最新の圧縮形式とファイルシステム \(NTFS, APFS\) のサポートを強化しています。コマンド構文は以前のバージョンと互換性があるため、既存のワークフローにそのまま置き換えることができます。インストールはパッケージマネージャ \(Kali Linux, NixOS\) または Rust パッケージマネージャ \(cargo\) から可能です。
 
 別のツールを利用することもできます。 Binvis オンラインおよびスタンドアロンアプリケーションを使用します。
 
