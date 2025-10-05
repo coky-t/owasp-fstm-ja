@@ -119,7 +119,7 @@ fdisk -lu <bin> #lists a drives partition and filesystems if multiple
 
 高エントロピー = 暗号化されている \(または何らかの方法で圧縮されている\) 可能性が高い
 
-> **注:** 2024 年の時点で、Binwalk v3 は Rust で完全に書き直され、以前の Python ベースのバージョンと比較して解析速度が大幅に向上し、誤検出が減少しました。Rust 実装ではメモリの安全性を向上し、大規模なファームウェアイメージでのパフォーマンスを向上し、最新の圧縮形式とファイルシステム \(NTFS, APFS\) のサポートを強化しています。コマンド構文は以前のバージョンと互換性があるため、既存のワークフローにそのまま置き換えることができます。インストールはパッケージマネージャ \(Kali Linux, NixOS\) または Rust パッケージマネージャ \(cargo\) から可能です。
+> **注:** 2024 年の時点で、Binwalk v3 は Rust で完全に書き直され、以前の Python ベースのバージョンと比較して解析速度が大幅に向上し、誤検出が減少しました。Rust 実装ではメモリの安全性を向上し、大きなファームウェアイメージでのパフォーマンスを向上し、最新の圧縮形式とファイルシステム \(NTFS, APFS\) のサポートを強化しています。コマンド構文は以前のバージョンと互換性があるため、既存のワークフローにそのまま置き換えることができます。インストールはパッケージマネージャ \(Kali Linux, NixOS\) または Rust パッケージマネージャ \(cargo\) から可能です。
 
 別のツールを利用することもできます。 Binvis オンラインおよびスタンドアロンアプリケーションを使用します。
 
@@ -139,7 +139,7 @@ fdisk -lu <bin> #lists a drives partition and filesystems if multiple
 
 ファイルシステムタイプ: squashfs, ubifs, romfs, rootfs, jffs2, yaffs2, cramfs, initramfs
 
-> **Binwalk v3 Performance Note:** The Rust-based Binwalk v3 offers substantial speed improvements during recursive extraction \(`-e`\) operations, particularly on large firmware images \(>100MB\). The verbose flag \(`-v`\) provides detailed extraction progress, which is especially useful for debugging extraction failures with complex or obfuscated firmware.
+> **Binwalk v3 パフォーマンスノート:** Rust ベースの Binwalk v3 は、特に大きなファームウェアイメージ \(>100MB\) の場合、再帰抽出 \(`-e`\) 操作時の速度を大幅に向上します。詳細フラグ \(`-v`\) は詳細な抽出の進行状況を表示します。これは複雑なファームウェアや難読化されたファームウェアでの抽出失敗をデバッグする際に特に役立ちます。
 
 2a. 往々にして、 binwalk にはシグネチャにそのファイルシステムのマジックバイトがないことがあります。このような場合には、binwalk を使用してファイルシステムのオフセットを見つけ、圧縮されたファイルシステムをバイナリから切り出し、以下の手順を使用して、ファイルシステムをその種類に応じて手動で抽出します。
 
