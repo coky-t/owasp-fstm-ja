@@ -254,25 +254,25 @@ firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成され�
 
 以下のオープンソースツールは組み込みファームウェアの解析に特に役立ちます。
 
-**Lightweight Scanners:**
+**軽量スキャナ:**
 
-* **Cppcheck** - Static analyzer designed for embedded C/C++ projects
-  * Detects buffer overflows, null pointer dereferences, and memory leaks
-  * Supports MISRA and CERT compliance standards critical for safety-critical embedded systems
-  * Handles non-standard syntax common in embedded development
-  * Low false positive rate with focused bug detection
-  * Installation: `apt install cppcheck` or download from [cppcheck.sourceforge.io](https://cppcheck.sourceforge.io/)
-  * Usage: `cppcheck --enable=all --addon=cert --addon=misra <source_dir>`
+* **Cppcheck** - 組み込み C/C++ プロジェクト向けに設計された静的アナライザ
+  * バッファオーバーフロー、ヌルポインタデリファレンス、メモリリークを検出
+  * 安全性重視の組み込みシステムに不可欠な MISRA および CERT コンプライアンス標準をサポート
+  * 組み込み開発でよくある非標準構文に対応
+  * バグ検出を重視した低い誤検知率
+  * インストール方法: `apt install cppcheck` または [cppcheck.sourceforge.io](https://cppcheck.sourceforge.io/) からダウンロード
+  * 使用方法: `cppcheck --enable=all --addon=cert --addon=misra <source_dir>`
 
-* **Flawfinder** - Security-focused vulnerability scanner for C/C++
-  * **Primary use case:** Identifies dangerous function calls that enable buffer overflows and command injection
-  * Flags unsafe functions: strcpy, strcat, sprintf, gets, scanf, system, popen, exec family
-  * Prioritizes findings by risk level \(0-5 scale\)
-  * Fast lexical scanning without compilation requirements
-  * HTML output with vulnerability code context
-  * Installation: `pip install flawfinder`
-  * Usage: `flawfinder --html --context --minlevel=4 <source_dir> > report.html`
-  * **Best for:** Quick triage of web server code and CGI binaries for RCE vectors
+* **Flawfinder** - C/C++ 向けのセキュリティ重視の脆弱性スキャナ
+  * **主なユースケース:** バッファオーバーフローやコマンドインジェクションを可能にする危険な関数呼び出しを特定
+  * 安全でない関数にフラグ付け: strcpy, strcat, sprintf, gets, scanf, system, popen, exec ファミリー
+  * リスクレベル \(0 ～ 5 のスケール\) で検出結果を優先順位付け
+  * コンパイル不要の高速な語彙スキャン
+  * 脆弱性コードコンテキストを含む HTML 出力
+  * インストール方法: `pip install flawfinder`
+  * 使用方法: `flawfinder --html --context --minlevel=4 <source_dir> > report.html`
+  * **最適な用途:** ウェブサーバーコードと CGI バイナリの RCE ベクトルに対する迅速なトリアージ
 
 **Compiler-Integrated Tools:**
 
