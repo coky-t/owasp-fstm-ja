@@ -241,18 +241,18 @@ firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成され�
 
 > **重大な調査結果:** 2025 年の時点で、これらの脆弱性クラスはコンシューマ IoT から企業インフラストラクチャに至るデバイスに悪影響を及ぼし続けています。最近の例としては、**CVE-2024-41592** \(DrayTek ルーター - GetCGI\(\) のバッファオーバーフロー, CVSS 10.0\)、**CVE-2024-21833** \(TP-Link ルーター - サニタイズされていない国パラメータによる OS コマンドインジェクション\)、**CVE-2024-12856** \(Four-Faith 産業用ルーター - adj_time_year パラメータでのコマンドインジェクション\)、**CVE-2025-20334** \(Cisco IOS XE エンタープライズスイッチ/ルーター - HTTP API コマンドインジェクション, CVSS 8.8\) などがあります。影響はホームネットワークから重要なインフラストラクチャにまで及びます。**CVE-2023-20198** \(Cisco IOS XE Web UI, CVSS 10.0\) は 2023 年 10 月に世界中で 4 万～ 5 万台の企業ネットワークデバイスの侵害につながりました。すべての例にわたる根本原因は、最新の言語保護が組み込まれていない、メモリセーフではない C/C++ で記述されたファームウェアです。
 
-**Locating High-Risk Code:**
+**高リスクコードの特定:**
 
-Prioritize SAST analysis on the following code paths most likely to expose remote code execution \(RCE\) vulnerabilities:
+リモートコード実行 \(RCE\) 脆弱性を露呈する可能性が高い以下のコードパスに対して SAST 解析を優先的に実施します。
 
-* **Web server binaries and CGI scripts** - Often found in `/usr/sbin/httpd`, `/www/cgi-bin/`, `/htdocs/`, or `/web/`
-* **API handlers and request parsers** - Search for functions handling HTTP parameters, JSON/XML parsing, or form data
-* **System configuration utilities** - Code that modifies device settings, often accepting user input and executing system commands
-* **Network service daemons** - UPnP, SOAP, REST API endpoints that process external requests
+* **Web サーバーバイナリと CGI スクリプト** - 多くの場合 `/usr/sbin/httpd`, `/www/cgi-bin/`, `/htdocs/`, `/web/` にあります
+* **API ハンドラとリクエストパーサー** - HTTP パラメータ、JSON/XML 解析、form データを処理する関数を検索します
+* **システム設定ユーティリティ** - デバイス設定を変更するコード。多くの場合、ユーザー入力を受け入れ、システムコマンドを実行します
+* **Network service daemons** - 外部リクエストを処理する UPnP, SOAP, REST API エンドポイント
 
-> **Pro Tip:** Use `grep -r "system\|popen\|exec" <extracted_firmware>` to quickly identify code that shells out to the operating system. Then trace backwards to find where user-controlled input enters these dangerous functions. Web server code is particularly valuable for discovering remotely exploitable command injection vulnerabilities that can lead to full device compromise.
+> **実用的な助言:** `grep -r "system\|popen\|exec" <extracted_firmware>` を使用して、オペレーティングシステムにシェルアウトするコードを素早く特定します。次に、ユーザーによる入力がこれらの危険な関数に入る場所を遡って追跡します。Web サーバーのコードは、デバイス全体の侵害につながる可能性のある、リモートから悪用可能なコマンドインジェクション脆弱性を発見するのに、特に価値があります。
 
-The following open-source tools are specifically valuable for embedded firmware analysis:
+以下のオープンソースツールは組み込みファームウェアの解析に特に役立ちます。
 
 **Lightweight Scanners:**
 
