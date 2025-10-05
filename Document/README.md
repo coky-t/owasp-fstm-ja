@@ -232,14 +232,14 @@ $ dd if=DIR850L_REVB.bin bs=1 skip=1704084 of=dir.squashfs
 
 firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成されます。これらの出力ファイルは手動で確認する必要があります。
 
-#### Static Analysis of Extracted Firmware Code
+#### 抽出したファームウェアコードの静的解析
 
-When firmware source code or decompiled binaries are available, perform static application security testing \(SAST\) to identify security vulnerabilities in C/C++ code before runtime analysis. Focus SAST efforts on two critical vulnerability classes that remain prevalent in embedded firmware:
+ファームウェアソースコードまたは逆コンパイルしたバイナリが利用可能な場合、実行時解析の前に静的アプリケーションセキュリティテスト \(SAST\) を実施し、C/C++ コードのセキュリティ脆弱性を特定します。SAST の取り組みは、組み込みファームウェアに依然として蔓延している二つの重大な脆弱性クラスに焦点を当てます。
 
-1. **Memory corruption vulnerabilities** - Buffer overflows, use-after-free, and integer overflows caused by unsafe C/C++ functions
-2. **OS command injection** - Vulnerabilities where user input is passed unsafely to shell commands or system calls
+1. **メモリ破損の脆弱性** - 安全でない C/C++ 関数によって引き起こされるバッファオーバーフロー、解放後使用 (use-after-free)、整数オーバーフロー
+2. **OS コマンドインジェクション** - ユーザー入力がシェルコマンドまたはシステムコールに安全でない方法で渡される脆弱性
 
-> **Critical Finding:** As of 2025, these vulnerability classes continue to plague devices from consumer IoT to enterprise infrastructure. Recent examples include **CVE-2024-41592** \(DrayTek routers - buffer overflow in GetCGI\(\) with CVSS 10.0\), **CVE-2024-21833** \(TP-Link routers - OS command injection via unsanitized country parameter\), **CVE-2024-12856** \(Four-Faith industrial routers - command injection in adj_time_year parameter\), and **CVE-2025-20334** \(Cisco IOS XE enterprise switches/routers - HTTP API command injection, CVSS 8.8\). The impact spans from home networks to critical infrastructure: **CVE-2023-20198** \(Cisco IOS XE Web UI, CVSS 10.0\) resulted in 40,000-50,000 compromised enterprise network devices worldwide in October 2023. The root cause across all examples: firmware written in non-memory-safe C/C++ without modern language protections built in.
+> **重大な調査結果:** 2025 年の時点で、これらの脆弱性クラスはコンシューマ IoT から企業インフラストラクチャに至るデバイスに悪影響を及ぼし続けています。最近の例としては、**CVE-2024-41592** \(DrayTek ルーター - GetCGI\(\) のバッファオーバーフロー, CVSS 10.0\)、**CVE-2024-21833** \(TP-Link ルーター - サニタイズされていない国パラメータによる OS コマンドインジェクション\)、**CVE-2024-12856** \(Four-Faith 産業用ルーター - adj_time_year パラメータでのコマンドインジェクション\)、**CVE-2025-20334** \(Cisco IOS XE エンタープライズスイッチ/ルーター - HTTP API コマンドインジェクション, CVSS 8.8\) などがあります。影響はホームネットワークから重要なインフラストラクチャにまで及びます。**CVE-2023-20198** \(Cisco IOS XE Web UI, CVSS 10.0\) は 2023 年 10 月に世界中で 4 万～ 5 万台の企業ネットワークデバイスの侵害につながりました。すべての例にわたる根本原因は、最新の言語保護が組み込まれていない、メモリセーフではない C/C++ で記述されたファームウェアです。
 
 **Locating High-Risk Code:**
 
