@@ -23,11 +23,11 @@
 | 8. ランタイム解析 | デバイス実行時にコンパイル済みバイナリを解析します |
 | 9. バイナリエクスプロイト | 前のステージで発見した特定済みの脆弱性をエクスプロイトして、ルートやコード実行を果たします |
 
-> **Note:** This firmware-specific methodology complements the [OWASP IoT Security Testing Guide \(ISTG\)](https://owasp.org/owasp-istg/), which provides additional test cases for hardware interfaces, wireless protocols, network services, and user interfaces. For requirements-driven security assessments, the [OWASP IoT Security Verification Standard \(ISVS\)](https://github.com/OWASP/IoT-Security-Verification-Standard-ISVS) defines WHAT security controls must be implemented, while FSTM defines HOW to test firmware components. Use ISVS, ISTG, and FSTM together for comprehensive IoT device security assessments.
+> **注:** このファームウェア固有の方法論は [OWASP IoT セキュリティテストガイド \(ISTG\)](https://owasp.org/owasp-istg/) を補完するものであり、ハードウェアインタフェース、無線プロトコル、ネットワークサービス、ユーザーインタフェースに対する追加のテストケースを提供します。要件主導型のセキュリティ評価には、[OWASP IoT セキュリティ検証標準 \(ISVS\)](https://github.com/OWASP/IoT-Security-Verification-Standard-ISVS) が実装すべきセキュリティコントロールの内容を定義し、FSTM がファームウェアコンポーネントのテスト方法を定義します。包括的な IoT デバイスのセキュリティ評価には ISVS, ISTG, FSTM を併用してください。
 
 次のセクションでは各ステージの詳細と適用可能なサポート例を示します。 [OWASP Internet of Things Project](https://owasp.org/www-project-internet-of-things/) ページと GitHub リポジトリを訪問して、最新の手法のアップデートと今後のプロジェクトリリースを検討します。
 
-For a complementary approach covering the full IoT device attack surface beyond firmware \(hardware interfaces, wireless protocols, network services, user interfaces\), refer to the [OWASP IoT Security Testing Guide \(ISTG\)](https://owasp.org/owasp-istg/), which provides a component-based testing framework with a comprehensive test case catalog. ISTG can be used alongside FSTM's firmware-specific methodology for complete IoT device security assessments.
+ファームウェア \(ハードウェアインタフェース、無線プロトコル、ネットワークサービス、ユーザーインタフェース\) を超えた IoT デバイスの攻撃対象領域全体をカバーする補完的なアプローチについては、[OWASP IoT セキュリティテストガイド \(ISTG\)](https://owasp.org/owasp-istg/) を参照してください。これは包括的なテストケースカタログを備えたコンポーネントベースのテストフレームワークを提供しています。包括的な IoT デバイスのセキュリティ評価には、ISTG を FSTM のファームウェア固有の方法論と併用します。
 
 このドキュメント全体で使用されるファームウェアテストツールを備えた事前構成済み Ubuntu 仮想マシン \(EmbedOS\) は次の [リンク](https://tinyurl.com/EmbedOS-2020) からダウンロードできます。 EmbedOS のツールに関する詳細は GitHub の次のリポジトリ [https://github.com/scriptingxss/EmbedOS](https://github.com/scriptingxss/EmbedOS) 内にあります。
 
