@@ -459,15 +459,15 @@ Microsoft バイナリ \(EXE & DLL\) の場合、 [PESecurity](https://github.co
 * 証明書、秘密鍵、パスワードハッシュの検出
 * NX, DEP, ASLR, スタックカナリア, RELRO, FORTIFY\_SOURCE などのバイナリ緩和策の検出
 * レガシーバイナリ関数 (例: strcpy) の検出
-* **Software Bill of Materials \(SBOM\) generation** - As of 2024, EMBA evolved to include comprehensive SBOM capabilities critical for regulatory compliance and vulnerability management
-  * Generates reproducible and accurate SBOMs for firmware analysis
-  * Works with systems lacking traditional package managers \(essential for embedded devices\)
-  * Supports multiple package manager environments simultaneously
-  * Integration with cve-bin-tool for automated CVE correlation
-  * SBOM VEX \(Vulnerability Exploitability eXchange\) support for detailed vulnerability context
-  * Tracks recompiled and modified libraries often missed by traditional AppSec tools
-  * Complies with 2025 CISA minimum SBOM elements for U.S. Government contracts
-* Enhanced extraction pipeline with Binwalk v3 \(Rust\) and unblob integration \(December 2024\)
+* **ソフトウェア部品表 \(SBOM\) 生成** - 2024 年の時点で、EMBA は規制遵守と脆弱性管理に不可欠な包括的な SBOM 機能を含むように進化しました。
+  * ファームウェア解析のための再現可能で正確な SBOM を生成
+  * 従来のパッケージマネージャがないシステムでも動作 \(組み込みデバイスに必須\)
+  * 複数のパッケージマネージャ環境を同時にサポート
+  * cve-bin-tool との統合で CVE 相関を自動化
+  * SBOM VEX \(Vulnerability Exploitability eXchange\) サポートで詳細な脆弱性コンテキストに対応
+  * 従来の AppSec ツールでは見過ごされがちな、再コンパイルおよび変更されたライブラリを追跡
+  * 米国政府コントラクトにおける 2025 年 CISA の SBOM 最小要素に準拠
+* Binwalk v3 \(Rust\) と unblob 統合による抽出パイプラインの強化 \(2024 年 12 月\)
 * 並列実行によるパフォーマンスの最大化
 * 事前設定済みの Docker イメージが利用可能で簡単にインストール可能
 * 自動解析をさらに深堀するためのインタラクティブな HTML レポート
