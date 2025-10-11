@@ -550,9 +550,9 @@ firefox ~/emba_logs_iotgoat/html-report/index.html
 
 *注意:* *EMBArk* は非常に初期の開発段階にあります。
 
-#### Software Bill of Materials \(SBOM\) Generation
+#### ソフトウェア部品表 \(SBOM\) 生成
 
-As firmware security assessments increasingly require regulatory compliance and supply chain transparency, generating a comprehensive Software Bill of Materials has become essential. As of 2025, SBOMs are mandatory for organizations selling software to the U.S. Government \(Executive Order 14028\), and over 60% of enterprises require SBOMs as part of their cybersecurity practices. The OWASP IoT Security Verification Standard \(ISVS\) requirement **V1.1.1** mandates that devices maintain accurate SBOMs, making firmware-level SBOM generation critical for compliance verification.
+ファームウェアのセキュリティ評価は規制遵守とサプライチェーンの透明性をますます要求し、包括的なソフトウェア部品表の生成が不可欠になっています。2025 年の時点において、SBOM は米国政府にソフトウェアを販売する組織に必須であり \(大統領令 14028\)、60% 以上の企業がサイバーセキュリティ実践の一環として SBOM を必要としています。OWASP IoT セキュリティ検証標準 \(ISVS\) の要件 **V1.1.1** では、デバイスが正確な SBOM を維持することを義務付けており、ファームウェアレベルの SBOM 生成はコンプライアンス検証に不可欠となっています。
 
 ##### Why SBOMs Matter for Firmware Security
 
