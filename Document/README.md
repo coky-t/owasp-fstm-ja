@@ -274,14 +274,14 @@ firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成され�
   * 使用方法: `flawfinder --html --context --minlevel=4 <source_dir> > report.html`
   * **最適な用途:** ウェブサーバーコードと CGI バイナリの RCE ベクトルに対する迅速なトリアージ
 
-**Compiler-Integrated Tools:**
+**コンパイラ統合ツール:**
 
-* **Clang-Tidy** - LLVM-based linter and static analyzer
-  * Detects memory corruption, buffer overflows, and security issues
-  * Provides automated fixes for common vulnerabilities
-  * Integrates with CMake and modern build systems
-  * Installation: `apt install clang-tidy`
-  * Usage: `clang-tidy <source_files> -- -I<include_paths>`
+* **Clang-Tidy** - LLVM ベースのリンターおよび静的アナライザ
+  * メモリ破損、バッファオーバーフロー、セキュリティ問題を検出
+  * 一般的な脆弱性に対する自動修正を提供
+  * CMake およびモダンなビルドシステムとの統合
+  * インストール方法: `apt install clang-tidy`
+  * 使用方法: `clang-tidy <source_files> -- -I<include_paths>`
 
 **Advanced Semantic Analysis:**
 
