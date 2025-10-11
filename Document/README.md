@@ -300,14 +300,14 @@ firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成され�
   * インストール方法: `pip install semgrep`
   * 使用方法: `semgrep --config=auto <source_dir>`
 
-**Analysis Workflow for Maximum Impact:**
+**効果を最大化するための解析ワークフロー:**
 
-Use multiple SAST tools in combination, as each tool has unique analysis capabilities and detection patterns. For embedded firmware targeting memory corruption and command injection vulnerabilities, follow this workflow:
+各ツールには独自の解析機能と検出パターンがあるため、複数の SAST ツールを組み合わせて使用します。メモリ破損やコマンドインジェクション脆弱性をターゲットとする組み込みファームウェアには、以下のワークフローに従います。
 
-1. **Quick triage with Flawfinder** - Scan web server directories and CGI code for dangerous functions \(strcpy, system, popen\)
-2. **Deep analysis with Cppcheck** - Run full CERT/MISRA checks on flagged files to confirm buffer overflow risks
-3. **Validation with Clang-Tidy** - Verify memory safety issues and check for additional CWE patterns
-4. **Advanced threat modeling with CodeQL or Semgrep** - Trace data flow from web parameters to unsafe sinks
+1. **Flawfinder での迅速なトリアージ** - ウェブサーバーのディレクトリと CGI コードに対して危険な関数  \(strcpy, system, popen\) についてスキャンします。
+2. **Cppcheck での詳細な解析** - フラグ付けしたファイルに対して完全な CERT/MISRA チェックを実行し、バッファオーバーフローのリスクを確認します。
+3. **Clang-Tidy でのバリデーション** - メモリの安全性に関する問題を検証し、追加の CWE パターンをチェックします。
+4. **CodeQL または Semgrep での高度な脅威モデリング** - ウェブパラメータから安全でないシンクへのデータフローを追跡します。
 
 **Target Code Paths in Priority Order:**
 
