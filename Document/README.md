@@ -309,14 +309,14 @@ firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成され�
 3. **Clang-Tidy でのバリデーション** - メモリの安全性に関する問題を検証し、追加の CWE パターンをチェックします。
 4. **CodeQL または Semgrep での高度な脅威モデリング** - ウェブパラメータから安全でないシンクへのデータフローを追跡します。
 
-**Target Code Paths in Priority Order:**
+**対象コードパス (優先度順):**
 
-1. `/www/cgi-bin/*` and `/htdocs/*` - Web interfaces handling HTTP requests
-2. Files containing `system()`, `popen()`, `exec*()` - Command execution code
-3. Functions with `strcpy()`, `sprintf()`, `gets()` - Buffer overflow candidates
-4. JSON/XML parsers and input validators - Data deserialization vulnerabilities
+1. `/www/cgi-bin/*` および `/htdocs/*` - HTTP リクエストを処理する Web インタフェース
+2. `system()`, `popen()`, `exec*()` を含むファイル - コマンド実行コード
+3. `strcpy()`, `sprintf()`, `gets()` を有する関数 - バッファオーバーフロー候補
+4. JSON/XML パーサーと入力バリデータ - データデシリアライゼーションの脆弱性
 
-For firmware with available source code, integrate these tools into your analysis workflow before proceeding to dynamic testing stages. SAST findings of command injection in web server code provide high-value targets for Stage 7 dynamic analysis and exploitation attempts. These tools complement binary analysis frameworks like FACT and EMBA by providing source-level vulnerability detection that can guide targeted reverse engineering efforts.
+ソースコードを利用可能なファームウェアでは、動的テストステージに進む前に、これらのツールを解析ワークフローに統合します。ウェブサーバーコードでのコマンドインジェクションの SAST 検出結果は、ステージ 7 の動的解析とエクスプロイトの試みにとって価値の高いターゲットとなります。これらのツールは FACT や EMBA などのバイナリ解析フレームワークを補完し、ターゲットを絞ったリバースエンジニアリングの取り組みを導くソースレベルの脆弱性検出を提供します。
 
 #### ファームウェア解析比較ツールキット \(Firmware Analysis Comparison Toolkit, FACT\)
 
