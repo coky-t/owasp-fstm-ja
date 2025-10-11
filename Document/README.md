@@ -283,22 +283,22 @@ firmwalker.txt と firmwalkerappsec.txt の二つのファイルが生成され�
   * インストール方法: `apt install clang-tidy`
   * 使用方法: `clang-tidy <source_files> -- -I<include_paths>`
 
-**Advanced Semantic Analysis:**
+**高度なセマンティック解析:**
 
-* **CodeQL** - Query-based code analysis engine \(GitHub\)
-  * Build-free scanning for C/C++ repositories \(2025 public preview\)
-  * Data flow analysis for tracking unsafe data propagation
-  * Free for open-source firmware projects
-  * Successfully identified 13 CVE vulnerabilities in U-Boot firmware
-  * Installation: Download from [github.com/github/codeql-cli-binaries](https://github.com/github/codeql-cli-binaries)
-  * Usage: Create database and run security queries against firmware code
+* **CodeQL** - クエリベースのコード解析エンジン \(GitHub\)
+  * C/C++ リポジトリ向けのビルドフリースキャン \(2025 年パブリックプレビュー\)
+  * 安全でないデータの伝播を追跡するためのデータフロー解析
+  * オープンソースファームウェアプロジェクトでフリー
+  * U-Boot ファームウェアで 13 件の CVE 脆弱性の特定に成功
+  * インストール方法: [github.com/github/codeql-cli-binaries](https://github.com/github/codeql-cli-binaries) からダウンロード
+  * 使用方法: データベースを作成し、ファームウェアコードに対してセキュリティクエリを実行
 
-* **Semgrep** - Fast pattern-based security scanner
-  * Scans C/C++ source without requiring buildable projects
-  * Community rulesets focused on embedded/POSIX vulnerabilities
-  * OSS version available \(C/C++ support experimental but functional\)
-  * Installation: `pip install semgrep`
-  * Usage: `semgrep --config=auto <source_dir>`
+* **Semgrep** - 高速なパターンベースのセキュリティスキャナ
+  * ビルド可能なプロジェクトを必要とせずに C/C++ ソースをスキャン
+  * 組み込み/POSIX の脆弱性に焦点を当てたコミュニティルールセット
+  * OSS 版が利用可能 \(C/C++ サポートは実験的だが機能的\)
+  * インストール方法: `pip install semgrep`
+  * 使用方法: `semgrep --config=auto <source_dir>`
 
 **Analysis Workflow for Maximum Impact:**
 
