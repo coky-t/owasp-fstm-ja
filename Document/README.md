@@ -554,22 +554,22 @@ firefox ~/emba_logs_iotgoat/html-report/index.html
 
 ファームウェアのセキュリティ評価は規制遵守とサプライチェーンの透明性をますます要求し、包括的なソフトウェア部品表の生成が不可欠になっています。2025 年の時点において、SBOM は米国政府にソフトウェアを販売する組織に必須であり \(大統領令 14028\)、60% 以上の企業がサイバーセキュリティ実践の一環として SBOM を必要としています。OWASP IoT セキュリティ検証標準 \(ISVS\) の要件 **V1.1.1** では、デバイスが正確な SBOM を維持することを義務付けており、ファームウェアレベルの SBOM 生成はコンプライアンス検証に不可欠となっています。
 
-##### Why SBOMs Matter for Firmware Security
+##### ファームウェアセキュリティにおいて SBOM が重要である理由
 
-Traditional application security tooling creates incomplete SBOMs for IoT and embedded devices due to the following limitations:
+従来のアプリケーションセキュリティツールは以下の制限により IoT デバイスや組み込みデバイスに対して不完全な SBOM を作成します。
 
-* Cannot identify libraries that were statically compiled, recompiled, or modified from their original source
-* Lacks visibility into vulnerabilities present in binary-only firmware components
-* Misses dependencies in systems without traditional package managers \(common in embedded Linux\)
-* Fails to track firmware-specific components such as bootloaders, RTOS kernels, and proprietary drivers
+* 静的にコンパイル、再コンパイル、または元のソースから変更されたライブラリを識別できない
+* バイナリのみのファームウェアコンポーネントに存在する脆弱性を可視化できない
+* 従来のパッケージマネージャを持たないシステム \(組み込み Linux では一般的\) では依存関係を見落とす
+* ブートローダー、RTOS カーネル、プロプライエタリドライバなどのファームウェアコンポーネントを追跡できない
 
-A comprehensive firmware SBOM enables:
+包括的なファームウェア SBOM は以下を可能にします。
 
-* **Rapid vulnerability response** - Identify affected components in hours instead of weeks when new CVEs are published
-* **Supply chain transparency** - Track all third-party components, open source libraries, and their origins
-* **Compliance requirements** - Meet CISA 2025 minimum SBOM elements and industry regulations
-* **Risk assessment** - Understand the complete attack surface of firmware before deployment
-* **License compliance** - Identify all open source licenses \(GPL, MIT, Apache, etc.\) to prevent legal issues
+* **迅速な脆弱性対応** - 新しい CVE が公開された際、影響を受けるコンポーネントを数週間ではなく数時間で特定する
+* **サプライチェーンの透明性** - すべてのサードパーティコンポーネント、オープンソースライブラリ、およびその起源を追跡する
+* **コンプライアンス要件** - CISA 2025 の SBOM 最小要素と業界規制を満たす
+* **リスク評価** - デプロイメント前にファームウェアの攻撃対象領域を完全に把握する
+* **ライセンスコンプライアンス** - すべてのオープンソースライセンス \(GPL, MIT, Apache など\) を特定し、法的問題を防止する
 
 ##### Generating SBOMs with EMBA
 
