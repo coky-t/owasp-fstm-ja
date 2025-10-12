@@ -589,16 +589,16 @@ EMBA は解析プロセスの一環として、以下の SBOM データを自動
 
 SBOM 出力は EMBA の HTML レポートに含まれており、標準形式 \(SPDX, CycloneDX\) でエクスポートして脆弱性管理プラットフォームと統合できます。
 
-##### SBOM Best Practices for Firmware
+##### ファームウェアにおける SBOM ベストプラクティス
 
-When generating and maintaining SBOMs for firmware security assessments:
+ファームウェアセキュリティ評価のために SBOM を生成および維持する場合:
 
-1. **Generate SBOMs early** - Create an SBOM during initial firmware acquisition \(Stage 2\) to establish a baseline
-2. **Update continuously** - Regenerate SBOMs with each firmware version to track component changes
-3. **Validate completeness** - Cross-reference SBOM output with manual filesystem analysis to identify gaps
-4. **Correlate with CVEs** - Use SBOM data to immediately assess impact when new vulnerabilities are disclosed
-5. **Share with stakeholders** - Provide SBOM reports to development teams, security operations, and compliance officers
-6. **Archive for compliance** - Maintain historical SBOMs for audit trails and incident response
+1. **SBOM を早期に生成** - ファームウェアの初期取得 \(ステージ 2\) 時に SBOM を作成し、ベースラインを確立する
+2. **継続的に更新** - ファームウェアのバージョンごとに SBOM を再生成し、コンポーネントの変更を追跡する
+3. **完全性を検証** - SBOM 出力と手動のファイルシステム解析を相互参照し、ギャップを特定する
+4. **CVE との相関** - 新しい脆弱性が公開された際、SBOM データを使用して即座に影響を評価する
+5. **利害関係者との共有** - 開発チーム、セキュリティ運用、コンプライアンス担当者に SBOM レポートを提供する
+6. **コンプライアンスのためのアーカイブ** - 監査証跡とインシデント対応のために過去の SBOM を維持する
 
 ##### CISA Minimum SBOM Elements \(2025\)
 
