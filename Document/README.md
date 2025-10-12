@@ -894,7 +894,7 @@ _注: ファームウェアに一般的ではない圧縮、ファイルシス�
 ランタイム解析ではデバイスが通常環境またはエミュレートされた環境で実行している際に実行中のプロセスまたはバイナリにアタッチします。基本的なランタイム解析の手順を以下に示します。
 
 1. `sudo chroot . ./qemu-arch -L <optionalLibPath> -g <gdb_port> <binary>`
-2. gdb-multiarch をアタッチするか IDA を使用してバイナリをエミュレートします
+2. gdb-multiarch をアタッチするか逆アセンブラを使用してバイナリをエミュレートします
 3. memcpy, strncpy, strcmp など手順 4 で特定される関数にブレークポイントを設定します
 4. 大きなペイロード文字列を実行して、ファジングツールを使用してオーバーフローまたはプロセスクラッシュを特定します
 5. 脆弱性が特定された場合は手順 8 に進みます
@@ -912,24 +912,24 @@ _注: ファームウェアに一般的ではない圧縮、ファイルシス�
 * Radare2/Rizin
 * [Cutter](https://github.com/rizinorg/cutter) \(GUI for Rizin\)
 
-#### Free and Open-Source Reverse Engineering Tools
+#### フリーおよびオープンソースのリバースエンジニアリングツール
 
-When selecting reverse engineering and binary analysis tools, prioritize free and open-source options to ensure accessibility and reproducibility:
+リバースエンジニアリングおよびバイナリ解析ツールを選択する際は、アクセシビリティと再現性を確保するために、フリーおよびオープンソースのオプションを優先します。
 
-**Disassemblers and Decompilers:**
-* **Ghidra** - NSA's software reverse engineering framework with powerful decompiler supporting multiple architectures \(ARM, MIPS, x86, etc.\). Includes scripting capabilities via Python and Java.
-* **Radare2/Rizin** - UNIX-like reverse engineering framework with command-line interface, supports extensive architecture set and binary formats.
-* **Cutter** - Modern GUI for Rizin providing graph visualization, decompilation, and interactive analysis capabilities.
+**逆アセンブラと逆コンパイラ:**
+* **Ghidra** - NSA のソフトウェアリバースエンジニアリングフレームワーク。強力な逆コンパイラを備え、複数のアーキテクチャ \(ARM, MIPS, x86 など\) をサポートします。Python と Java によるスクリプティング機能を備えています。
+* **Radare2/Rizin** - コマンドラインインタフェースでの UNIX ライクなリバースエンジニアリングフレームワーク。幅広いアーキテクチャセットとバイナリ形式をサポートします。
+* **Cutter** - Rizin のモダンな GUI。グラフの可視化、逆コンパイル、インタラクティブな解析機能を提供します。
 
-**Dynamic Analysis and Debugging:**
-* **GEF, PEDA, pwndbg** - GDB enhancement scripts providing exploit development features, heap visualization, and improved debugging workflows.
-* **Frida** - Dynamic instrumentation toolkit for injecting JavaScript into native applications on Windows, macOS, GNU/Linux, iOS, Android, and QNX.
+**動的解析とデバッグ:**
+* **GEF, PEDA, pwndbg** - GDB 拡張スクリプト。エクスプロイト開発機能、ヒープの可視化、デバッグワークフローの改善を提供します。
+* **Frida** - 動的計装ツールキット。Windows, macOS, GNU/Linux, iOS, Android, QNX 上のネイティブアプリケーションに JavaScript を注入します。
 
-**Binary Analysis Frameworks:**
-* **angr** - Python-based binary analysis platform with symbolic execution, control-flow analysis, and vulnerability discovery capabilities.
-* **QEMU** - Machine emulator supporting user-mode and system-mode emulation for firmware analysis across architectures.
+**バイナリ解析フレームワーク:**
+* **angr** - Python ベースのバイナリ解析プラットフォーム。シンボリック実行、制御フロー解析、脆弱性検出機能を備えています。
+* **QEMU** - マシンエミュレータ。アーキテクチャをまたぐファームウェア解析のためのユーザーモードとシステムモードエミュレーションをサポートします。
 
-These tools provide professional-grade reverse engineering capabilities without licensing costs, making firmware security analysis accessible to researchers, students, and organizations worldwide.
+これらのツールはライセンスコストなしでプロフェッショナルグレードのリバースエンジニアリング機能を提供し、世界中の研究者、学生、組織がファームウェアセキュリティ解析を利用できるようになります。
 
 ### **\[ステージ 9\] バイナリエクスプロイト**
 
