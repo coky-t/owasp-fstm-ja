@@ -600,19 +600,19 @@ SBOM 出力は EMBA の HTML レポートに含まれており、標準形式 \(
 5. **利害関係者との共有** - 開発チーム、セキュリティ運用、コンプライアンス担当者に SBOM レポートを提供する
 6. **コンプライアンスのためのアーカイブ** - 監査証跡とインシデント対応のために過去の SBOM を維持する
 
-##### CISA Minimum SBOM Elements \(2025\)
+##### CISA SBOM 最小要素 \(2025\)
 
-Ensure firmware SBOMs include the following minimum elements as defined by CISA:
+ファームウェア SBOM が CISA によって定義される以下の最小要素を含むことを確認します。
 
-* **Supplier Name** - Entity that creates, defines, and identifies components
-* **Component Name** - Designation assigned to a software unit by the original supplier
-* **Version** - Identifier used to denote a change in software
-* **Other Unique Identifiers** - Additional identifiers such as CPE \(Common Platform Enumeration\) or PURL \(Package URL\)
-* **Dependency Relationships** - Characterization of the relationship between components
-* **SBOM Author** - Name of the entity creating the SBOM
-* **Timestamp** - Record of the date and time of SBOM creation
+* **サプライヤ名** - コンポーネントを作成、定義、識別するエンティティ
+* **コンポーネント名** - 下のサプライヤがソフトウェアユニットに割り当てた名称
+* **バージョン** - ソフトウェアの変更を示すために使用される識別子
+* **その他の一意の識別子** - CPE \(Common Platform Enumeration\) や PURL \(Package URL\) などの追加の識別子
+* **依存関係** - コンポーネント間の関係の特性
+* **SBOM 作成者** - SBOM を作成したエンティティの名前
+* **タイムスタンプ** - SBOM 作成日時の記録
 
-Reference: [https://www.cisa.gov/sbom](https://www.cisa.gov/sbom)
+参照: [https://www.cisa.gov/sbom](https://www.cisa.gov/sbom)
 
 ##### SBOM Tools and Formats
 
