@@ -571,23 +571,23 @@ firefox ~/emba_logs_iotgoat/html-report/index.html
 * **リスク評価** - デプロイメント前にファームウェアの攻撃対象領域を完全に把握する
 * **ライセンスコンプライアンス** - すべてのオープンソースライセンス \(GPL, MIT, Apache など\) を特定し、法的問題を防止する
 
-##### Generating SBOMs with EMBA
+##### EMBA での SBOM の生成
 
-EMBA's SBOM generation provides comprehensive component tracking specifically designed for firmware analysis. The following example demonstrates SBOM generation during a standard EMBA firmware scan:
+EMBA の SBOM 生成は、ファームウェア解析用に特別に設計された、包括的なコンポーネント追跡機能を提供します。以下の例は標準的な EMBA ファームウェアスキャン時の SBOM 生成を示しています。
 
 ```bash
 sudo ./emba.sh -f firmware.bin -l ~/emba_logs -p ./scan-profiles/default-scan.emba
 ```
 
-EMBA automatically generates SBOM data as part of its analysis process, including:
+EMBA は解析プロセスの一環として、以下の SBOM データを自動的に生成します。
 
-* All detected software components with version information
-* CVE correlation via integrated cve-bin-tool
-* Component relationships and dependencies
-* Cryptographic asset inventory \(certificates, keys\)
-* Binary security posture per component
+* 検出されたすべてのソフトウェアコンポーネントとバージョン情報
+* 統合された cve-bin-tool での CVE 相関
+* コンポーネントの関連性と依存関係
+* 暗愚資産インベントリ \(証明書、鍵\)
+* コンポーネントごとのバイナリセキュリティ態勢
 
-The SBOM output is included in EMBA's HTML report and can be exported in standard formats \(SPDX, CycloneDX\) for integration with vulnerability management platforms.
+SBOM 出力は EMBA の HTML レポートに含まれており、標準形式 \(SPDX, CycloneDX\) でエクスポートして脆弱性管理プラットフォームと統合できます。
 
 ##### SBOM Best Practices for Firmware
 
