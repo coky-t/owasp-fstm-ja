@@ -986,61 +986,61 @@ ISTG ファームウェアコンポーネント \(**ISTG-FW**\) には FSTM ス�
 * **ISTG を使用する** IoT デバイスの攻撃対象領域全体をカバーした構造化されたチェックリストを必要とする場合
 * **両方を使用する** 包括的なカバレッジと標準化されたレポートを必要とするエンタープライズ IoT セキュリティ評価向け
 
-#### **OWASP ISVS: Requirements-Driven Testing**
+#### **OWASP ISVS: 要件駆動型テスト**
 
-The [OWASP IoT Security Verification Standard \(ISVS\)](https://coky-t.gitbook.io/owasp-isvs-ja/) defines **WHAT** security controls must be implemented, while FSTM defines **HOW** to test firmware components. ISVS provides a requirements framework that can drive your firmware testing scope and success criteria.
+[OWASP IoT セキュリティ検証標準 \(ISVS\)](https://coky-t.gitbook.io/owasp-isvs-ja/) は実装すべきセキュリティコントロールの **内容** を定義し、FSTM はファームウェアコンポーネントをテストする **方法** を定義します。ISVS はファームウェアテストのスコープと合格基準を駆動できる要件フレームワークを提供します。
 
-**ISVS Role in Firmware Testing:**
+**ファームウェアテストにおける ISVS の役割:**
 
-* **Requirements Definition** - ISVS Chapter V3 \(IoT Ecosystem\) and V4 \(Software Platform\) define security requirements for firmware components
-* **Scope Determination** - Use ISVS security levels \(L1: Basic, L2: Standard, L3: Advanced\) to determine FSTM testing depth
-* **Test Planning** - Map ISVS requirements to FSTM stages to ensure comprehensive coverage
-* **Verification** - Use ISVS requirements as acceptance criteria when validating FSTM findings
+* **要件定義** - ISVS V3 章 \(IoT エコシステム\) および V4 章 \(ソフトウェアプラットフォーム\) はファームウェアコンポーネントのセキュリティ要件を定義しています
+* **スコープ決定** - ISVS セキュリティレベル \(L1: 基本, L2: 標準, L3: 高度\) を使用して、FSTM テストの深度を決定します
+* **テスト計画** - ISVS 要件を FSTM ステージにマップし、包括的なカバレッジを確保します
+* **検証** - FSTM の調査結果を検証する際の受け入れ基準として ISVS 要件を使用します
 
-**Workflow: Requirements → Testing → Verification**
+**ワークフロー: 要件 → テスト → 検証**
 
 ```
-1. Select ISVS Requirements → 2. Execute FSTM Testing → 3. Verify Against ISVS
+1. ISVS 要件を選択する → 2. FSTM テストを実行する → 3. ISVS に対して検証する
          (WHAT)                       (HOW)                    (SUCCESS)
 ```
 
-**Mapping ISVS V3 Requirements to FSTM Stages:**
+**ISVS V3 要件と FSTM ステージのマッピング:**
 
-| ISVS Requirement | FSTM Stage | Testing Focus |
-|-----------------|-----------|--------------|
-| V3.1 \(SBOM\) | Stage 5 | Verify SBOM generation from extracted filesystem \(see EMBA SBOM analysis\) |
-| V3.2 \(Third-party Components\) | Stage 5 | Identify outdated libraries, vulnerable dependencies in extracted firmware |
-| V3.3 \(Secure Communication\) | Stage 7 | Dynamic analysis of encrypted channels, certificate validation |
-| V3.4 \(Firmware Update\) | Stage 7 | Test OTA update mechanism security, signature verification |
-| V4.1 \(Memory Protection\) | Stage 8 | Runtime analysis of ASLR, DEP, stack canaries in binary execution |
-| V4.2 \(Cryptography\) | Stage 5 & 8 | Static analysis of crypto implementations, runtime key storage validation |
+| ISVS 要件 | FSTM ステージ | テストの焦点 |
+|-----------|---------------|--------------|
+| V3.1 \(SBOM\) | ステージ 5 | 抽出されたファイルシステムからの SBOM 生成の検証 \(EMBA SBOM 解析を参照\) |
+| V3.2 \(サードパーティコンポーネント\) | ステージ 5 | 抽出されたファームウェア内の古いライブラリ、脆弱な依存関係の特定 |
+| V3.3 \(安全な通信\) | ステージ 7 | 暗号化されたチャネルの動的解析、証明書バリデーション |
+| V3.4 \(ファームウェアアップデート\) | ステージ 7 | OTA アップデートメカニズムのセキュリティ、署名検証のテスト |
+| V4.1 \(メモリ保護\) | ステージ 8 | バイナリ実行形式の ASLR、DEP、スタックカナリアの実行時解析 |
+| V4.2 \(暗号技術\) | ステージ 5 および 8 | 暗号実装の静的解析、実行時キーストレージバリデーション |
 
-**ISVS Security Levels and FSTM Testing Depth:**
+**ISVS セキュリティレベルと FSTM テスト深度:**
 
-* **Level 1 \(L1\)** - Basic security: Execute FSTM Stages 1-5 \(reconnaissance, extraction, static analysis\)
-* **Level 2 \(L2\)** - Standard security: Add FSTM Stages 6-7 \(emulation, dynamic analysis\)
-* **Level 3 \(L3\)** - Advanced security: Full FSTM Stages 1-9 \(including runtime analysis and exploitation\)
+* **レベル 1 \(L1\)** - 基本セキュリティ: FSTM ステージ 1 ～ 5 \(偵察、抽出、静的解析\) を実行します
+* **レベル 2 \(L2\)** - 標準セキュリティ: FSTM ステージ 6 ～ 7 \(エミュレーション、動的解析\) を追加します
+* **レベル 3 \(L3\)** - 高度セキュリティ: FSTM ステージ 1 ～ 9 全体 \(実行時解析とエクスプロイトを含む\)
 
-**Example: Requirements-Driven Firmware Assessment**
+**例: 要件駆動型ファームウェア評価**
 
 ```
-Client Request: "Assess IoT device firmware to ISVS Level 2 compliance"
+クライアントの要求: 「IoT デバイスファームウェアを ISVS レベル 2 準拠で評価」
 
-Step 1: Review ISVS V3 and V4 requirements for L2 security level
-Step 2: Execute FSTM Stages 1-7 to collect evidence against ISVS requirements
-Step 3: Document findings using ISVS requirement IDs (e.g., "V3.4 FAIL: No signature verification on firmware updates")
-Step 4: Provide remediation mapped to ISVS controls
+ステップ 1: ISVS V3 および V4 の要件を L2 セキュリティレベルでレビューします
+ステップ 2: FSTM ステージ 1 ～ 7 を実行し、ISVS 要件に照らして証跡を収集します
+ステップ 3: ISVS 要件 ID を使用して調査結果を文書化します (例: 「V3.4 不合格: ファームウェアアップデート時に署名検証なし」)
+ステップ 4: ISVS コントロールにマップされた改善策を提供します
 ```
 
-**Key ISVS Requirements for Firmware Testing:**
+**ファームウェアテストにおける主要な ISVS 要件:**
 
-* **V1.1.1** - Device maintains accurate SBOM \(verified via FSTM Stage 5 EMBA analysis\)
-* **V3.2.2** - Third-party components updated to latest versions \(tested via dependency analysis\)
-* **V3.4.1** - Firmware update mechanism uses digital signatures \(tested via FSTM Stage 7 OTA analysis\)
-* **V4.1.1** - Memory protection mechanisms enabled \(verified via FSTM Stage 8 runtime analysis\)
-* **V4.2.1** - Industry-standard cryptography used \(validated via FSTM Stage 5 binary analysis\)
+* **V1.1.1** - デバイスは正確な SBOM を維持している \(FSTM ステージ 5 EMBA 解析で検証します\)
+* **V3.2.2** - サードパーティコンポーネントは最新バージョンに更新されている \(依存関係解析でテストします\)
+* **V3.4.1** - ファームウェアアップデートメカニズムはデジタル署名を使用している \(FSTM ステージ 7 OTA 解析でテストします\)
+* **V4.1.1** - メモリ保護メカニズムが有効になっている \(FSTM ステージ 8 実行時解析で検証します\)
+* **V4.2.1** - 業界標準の暗号技術を使用している \(FSTM ステージ 5 バイナリ解析で検証します\)
 
-**Resources:**
+**リソース:**
 
 * OWASP ISVS (日本語版): [https://coky-t.gitbook.io/owasp-isvs-ja/](https://coky-t.gitbook.io/owasp-isvs-ja/)
 * OWASP ISTG (日本語版): [https://coky-t.gitbook.io/owasp-istg-ja/](https://coky-t.gitbook.io/owasp-istg-ja/)
