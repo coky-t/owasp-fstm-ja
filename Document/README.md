@@ -935,7 +935,7 @@ _注: ファームウェアに一般的ではない圧縮、ファイルシス�
 
 前の手順でバイナリ内の脆弱性を特定した後、実世界の影響とリスクを明らかにするために適切な概念実証 \(PoC\) が必要です。エクスプロイトコードを開発するには低レベル言語 \(ASM, C/C++, シェルコードなど\) でのプログラミング経験と特定のターゲットアーキテクチャ \(MIPS, ARM, x86 など\) 内でのバックグラウンドが必要です。 PoC コードにはメモリ内の命令を制御することにより、デバイスやアプリケーション上で任意の実行を取得することが含まれます。
 
-バイナリランタイム保護 \(NX, DEP, ASLR など\) が組込みシステム内に配置されることは一般的ではありませんが、このような場合にはリターン指向プログラミング \(ROP\) などの追加のテクニックが必要になることがあります。ROP により攻撃者はガジェットと呼ばれるターゲットプロセス/バイナリのコードに既存のコードをチェーンすることで任意の悪意のある機能を実装できます。ROP チェーンを形成することによりバッファオーバーフローなどの特定された脆弱性を悪用する手順を取得する必要があります。このような状況で役立つ可能性のあるツールには Capstone の gadget finder や ROPGadget - [https://github.com/JonathanSalwan/ROPgadget](https://github.com/JonathanSalwan/ROPgadget) があります。
+バイナリランタイム保護 \(NX, DEP, ASLR など\) が組み込みシステム内に配置されることは一般的ではありませんが、このような場合にはリターン指向プログラミング \(ROP\) などの追加のテクニックが必要になることがあります。ROP により攻撃者はガジェットと呼ばれるターゲットプロセス/バイナリのコードに既存のコードをチェーンすることで任意の悪意のある機能を実装できます。ROP チェーンを形成することによりバッファオーバーフローなどの特定された脆弱性を悪用する手順を取得する必要があります。このような状況で役立つ可能性のあるツールには Capstone の gadget finder や ROPGadget - [https://github.com/JonathanSalwan/ROPgadget](https://github.com/JonathanSalwan/ROPgadget) があります。
 
 さらなるガイダンスとして以下の参考文献を利用します。
 
@@ -1052,7 +1052,7 @@ ISTG ファームウェアコンポーネント \(**ISTG-FW**\) には FSTM ス�
 
 ファームウェアを評価する際にはツールを組み合わせて使用します。以下のリストは一般的に使用されるツールです。
 
-* [Firmware Analysis Comparison Toolkit](https://github.com/fkie-cad/FACT_core) \(FACT\) - 2024年まで積極的にメンテされていました。Python 3.10-3.12 が必要です。
+* [Firmware Analysis Comparison Toolkit](https://github.com/fkie-cad/FACT_core) \(FACT\) - 2024年まで積極的にメンテされていました。Python 3.10-3.12 が必要です
 * [FWanalyzer](https://github.com/cruise-automation/fwanalyzer)
 * [Firmwalker](https://github.com/craigz28/firmwalker)
 * [Firmware Modification Kit](https://code.google.com/archive/p/firmware-mod-kit/)
@@ -1071,16 +1071,16 @@ ISTG ファームウェアコンポーネント \(**ISTG-FW**\) には FSTM ス�
 * [Capstone Engine](https://github.com/aquynh/capstone)
 * [Qiling Advanced Binary Emulation Framework](https://github.com/qilingframework/qiling)
 * [Triton dynamic binary analysis \(DBA\) framework](https://triton.quarkslab.com/)
-* [EMBA - The firmware security analyzer](https://github.com/e-m-b-a/emba) - **2024 update includes SBOM generation** with cve-bin-tool integration
-* [EMBArk - Enterprise firmware scanning environment](https://github.com/e-m-b-a/embark) - Official release 2024
+* [EMBA - The firmware security analyzer](https://github.com/e-m-b-a/emba) - cve-bin-tool 統合で **2024 アップデートには SBOM 生成を含みます**
+* [EMBArk - Enterprise firmware scanning environment](https://github.com/e-m-b-a/embark) - 正式リリース 2024
 
-**C/C++ Static Analysis Security Testing \(SAST\) Tools:**
+**C/C++ 静的解析セキュリティテスト \(SAST\) ツール:**
 
-* [Cppcheck](https://github.com/danmar/cppcheck) - C/C++ static analyzer with MISRA/CERT compliance support for embedded systems
-* [Flawfinder](https://github.com/david-a-wheeler/flawfinder) - Lightweight security scanner for C/C++ identifying dangerous functions
-* [Clang-Tidy](https://clang.llvm.org/extra/clang-tidy/) - LLVM-based linter detecting memory corruption and security issues
-* [CodeQL](https://codeql.github.com/) - GitHub's semantic analysis engine with build-free C/C++ scanning \(free for OSS\)
-* [Semgrep](https://github.com/semgrep/semgrep) - Fast pattern-based scanner with embedded/POSIX rulesets \(OSS version\)
+* [Cppcheck](https://github.com/danmar/cppcheck) - 組み込みシステム向けに MISRA/CERT コンプライアンスサポートの C/C++ 静的アナライザ
+* [Flawfinder](https://github.com/david-a-wheeler/flawfinder) - 危険な関数を特定する C/C++ 向け軽量セキュリティスキャナ
+* [Clang-Tidy](https://clang.llvm.org/extra/clang-tidy/) - メモリ破損とセキュリティ問題をを検出する LLVM ベースのリンター
+* [CodeQL](https://codeql.github.com/) - ビルドフリーの C/C++ スキャン機能を備えた GitHub のセマンティック解析エンジン \(OSS はフリー\)
+* [Semgrep](https://github.com/semgrep/semgrep) - 組み込み/POSIX ルールセットを備えた高速パターンベーススキャナ \(OSS バージョン\)
 
 ### 脆弱性のあるファームウェア
 
