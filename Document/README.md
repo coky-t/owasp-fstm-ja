@@ -23,11 +23,11 @@
 | 8. ランタイム解析 | デバイス実行時にコンパイル済みバイナリを解析します |
 | 9. バイナリエクスプロイト | 前のステージで発見した特定済みの脆弱性をエクスプロイトして、ルートやコード実行を果たします |
 
-> **注:** このファームウェア固有の方法論は [OWASP IoT セキュリティテストガイド \(ISTG\)](https://owasp.org/owasp-istg/) を補完するものであり、ハードウェアインタフェース、無線プロトコル、ネットワークサービス、ユーザーインタフェースに対する追加のテストケースを提供します。要件主導型のセキュリティ評価には、[OWASP IoT セキュリティ検証標準 \(ISVS\)](https://github.com/OWASP/IoT-Security-Verification-Standard-ISVS) が実装すべきセキュリティコントロールの内容を定義し、FSTM がファームウェアコンポーネントのテスト方法を定義します。包括的な IoT デバイスのセキュリティ評価には ISVS, ISTG, FSTM を併用してください。
+> **注:** このファームウェア固有の方法論は [OWASP IoT セキュリティテストガイド \(ISTG\)](https://coky-t.gitbook.io/owasp-istg-ja/) を補完するものであり、ハードウェアインタフェース、無線プロトコル、ネットワークサービス、ユーザーインタフェースに対する追加のテストケースを提供します。要件主導型のセキュリティ評価には、[OWASP IoT セキュリティ検証標準 \(ISVS\)](https://coky-t.gitbook.io/owasp-isvs-ja/) が実装すべきセキュリティコントロールの内容を定義し、FSTM がファームウェアコンポーネントのテスト方法を定義します。包括的な IoT デバイスのセキュリティ評価には ISVS, ISTG, FSTM を併用してください。
 
 次のセクションでは各ステージの詳細と適用可能なサポート例を示します。 [OWASP Internet of Things Project](https://owasp.org/www-project-internet-of-things/) ページと GitHub リポジトリを訪問して、最新の手法のアップデートと今後のプロジェクトリリースを検討します。
 
-ファームウェア \(ハードウェアインタフェース、無線プロトコル、ネットワークサービス、ユーザーインタフェース\) を超えた IoT デバイスの攻撃対象領域全体をカバーする補完的なアプローチについては、[OWASP IoT セキュリティテストガイド \(ISTG\)](https://owasp.org/owasp-istg/) を参照してください。これは包括的なテストケースカタログを備えたコンポーネントベースのテストフレームワークを提供しています。包括的な IoT デバイスのセキュリティ評価には、ISTG を FSTM のファームウェア固有の方法論と併用します。
+ファームウェア \(ハードウェアインタフェース、無線プロトコル、ネットワークサービス、ユーザーインタフェース\) を超えた IoT デバイスの攻撃対象領域全体をカバーする補完的なアプローチについては、[OWASP IoT セキュリティテストガイド \(ISTG\)](https://coky-t.gitbook.io/owasp-istg-ja/) を参照してください。これは包括的なテストケースカタログを備えたコンポーネントベースのテストフレームワークを提供しています。包括的な IoT デバイスのセキュリティ評価には、ISTG を FSTM のファームウェア固有の方法論と併用します。
 
 このドキュメント全体で使用されるファームウェアテストツールを備えた事前構成済み Ubuntu 仮想マシン \(EmbedOS\) は次の [リンク](https://tinyurl.com/EmbedOS-2020) からダウンロードできます。 EmbedOS のツールに関する詳細は GitHub の次のリポジトリ [https://github.com/scriptingxss/EmbedOS](https://github.com/scriptingxss/EmbedOS) 内にあります。
 
@@ -942,53 +942,53 @@ _注: ファームウェアに一般的ではない圧縮、ファイルシス�
 * [https://azeria-labs.com/writing-arm-shellcode/](https://azeria-labs.com/writing-arm-shellcode/)
 * [https://www.corelan.be/index.php/category/security/exploit-writing-tutorials/](https://www.corelan.be/index.php/category/security/exploit-writing-tutorials/)
 
-### **Integrating FSTM with OWASP IoT Security Frameworks**
+### **FSTM と OWASP IoT セキュリティフレームワークの統合**
 
-The OWASP Firmware Security Testing Methodology \(FSTM\) focuses specifically on deep firmware analysis, extraction, emulation, and exploitation. For comprehensive IoT device security assessments, integrate FSTM with complementary OWASP frameworks: the [OWASP IoT Security Testing Guide \(ISTG\)](https://owasp.org/owasp-istg/) for component-based testing, and the [OWASP IoT Security Verification Standard \(ISVS\)](https://github.com/OWASP/IoT-Security-Verification-Standard-ISVS) for requirements-driven assessments.
+OWASP ファームウェアセキュリティテスト手法 \(FSTM\) は、ファームウェアの詳細な解析、抽出、エミュレーション、エクスプロイトに特化しています。IoT デバイスの包括的なセキュリティ評価には、FSTM を補完的な OWASP フレームワークと統合します。コンポーネントベースのテストには [OWASP IoT セキュリティテストガイド \(ISTG\)](https://coky-t.gitbook.io/owasp-istg-ja/)、要件駆動の評価には [OWASP IoT セキュリティ検証標準 \(ISVS\)](https://coky-t.gitbook.io/owasp-isvs-ja/) があります。
 
-**ISTG Components Complementing FSTM:**
+**FSTM を補完する ISTG コンポーネント:**
 
-* **Physical Interfaces \(ISTG-PHY\)** - Hardware debug ports \(UART, JTAG, SWD\) used during FSTM Stage 2 for firmware extraction
-* **Wireless Interfaces \(ISTG-WRLS\)** - WiFi, Bluetooth, Zigbee, LoRa security testing that extends FSTM Stage 7 dynamic analysis
-* **User Interfaces \(ISTG-UI\)** - Web applications, mobile apps, and admin consoles covered in FSTM Stage 7
-* **Data Exchange Services \(ISTG-DES\)** - REST APIs, MQTT, cloud backends that extend FSTM Stage 7 scope
-* **Processing Units \(ISTG-PROC\)** - CPU, MCU, TPM, secure enclave testing beyond firmware scope
-* **Memory \(ISTG-MEM\)** - RAM, flash, EEPROM security not covered by firmware filesystem analysis
+* **物理インタフェース \(ISTG-PHY\)** - FSTM ステージ 2 でファームウェア抽出に使用されるハードウェアデバッグポート \(UART, JTAG, SWD\)
+* **無線インタフェース \(ISTG-WRLS\)** - FSTM ステージ 7 動的解析を拡張する WiFi, Bluetooth, Zigbee, LoRa のセキュリティテスト
+* **ユーザーインタフェース \(ISTG-UI\)** - FSTM ステージ 7 でカバーされるウェブアプリケーション、モバイルアプリ、管理コンソール
+* **データ交換サービス \(ISTG-DES\)** - FSTM ステージ 7 スコープを拡張する REST API、MQTT、クラウドバックエンド
+* **処理装置 \(ISTG-PROC\)** - ファームウェアスコープを超えた CPU、MCU、TPM、セキュアエンクレーブのテスト
+* **メモリ \(ISTG-MEM\)** - ファームウェアファイルシステム解析ではカバーされない RAM、フラッシュ、EEPROM のセキュリティ
 
-**Recommended Integration Workflow:**
+**推奨統合ワークフロー:**
 
-1. **Scoping** - Use ISTG's device model to identify all device components and define test scope
-2. **Firmware Analysis** - Execute FSTM Stages 1-9 for comprehensive firmware security assessment
-3. **Component Testing** - Apply ISTG test cases for non-firmware components \(hardware, network, wireless\)
-4. **Documentation** - Report findings using ISTG test case references for standardized communication
+1. **スコープ設定** - ISTG のデバイスモデルを使用して、すべてのデバイスコンポーネントを特定し、テストスコープを定義します
+2. **ファームウェア解析** - 包括的なファームウェアセキュリティ評価として FSTM ステージ 1 ～ 9 を実行します
+3. **コンポーネントテスト** - ファームウェア以外のコンポーネント \(ハードウェア、ネットワーク、無線\) に ISTG テストケースを適用します
+4. **ドキュメント作成** - 標準化された通信に関する ISTG テストケースリファレンスを使用して、調査結果を報告します
 
-**Example Integration Points:**
+**統合ポイントの例:**
 
-* **FSTM Stage 2** \(Obtaining firmware\) → Reference **ISTG-PHY** test cases for hardware extraction techniques
-* **FSTM Stage 5** \(Analyzing filesystem\) → Map findings to **ISTG-FW\[INST\]** installed firmware test cases
-* **FSTM Stage 7** \(Dynamic analysis\) → Extend with **ISTG-DES** API testing and **ISTG-WRLS** wireless protocol analysis
-* **FSTM Stage 8** \(Runtime analysis\) → Complement with **ISTG-PROC** processor security test cases
+* **FSTM ステージ 2** \(ファームウェアの取得\) → ハードウェア抽出技法について **ISTG-PHY** テストケースを参照します
+* **FSTM ステージ 5** \(ファイルシステムの解析\) → 結果を **ISTG-FW\[INST\]** インストール済みファームウェアのテストケースにマップします
+* **FSTM ステージ 7** \(動的解析\) → **ISTG-DES** API テストと **ISTG-WRLS** 無線プロトコル解析で拡張します
+* **FSTM ステージ 8** \(実行時解析\) → **ISTG-PROC** プロセッサセキュリティテストケースで補完します
 
-**ISTG Firmware Test Case Categories:**
+**ISTG ファームウェアテストケースカテゴリ:**
 
-The ISTG firmware component \(**ISTG-FW**\) includes test cases that align with FSTM stages:
+ISTG ファームウェアコンポーネント \(**ISTG-FW**\) には FSTM ステージと整合するテストケースを含んでいます。
 
-* Information Gathering - Source code disclosure, binaries, implementation details \(aligns with FSTM Stage 1\)
-* Configuration and Patch Management - Outdated software, unnecessary functionality \(aligns with FSTM Stage 5\)
-* Secrets - Hardcoded credentials, unencrypted storage \(aligns with FSTM Stage 5\)
-* Cryptography - Weak algorithms, insecure implementations \(aligns with FSTM Stages 5 & 8\)
-* Firmware Update Mechanism \(**ISTG-FW\[UPDT\]**\) - Secure OTA updates, signature verification
-* Installed Firmware \(**ISTG-FW\[INST\]**\) - Runtime firmware security \(aligns with FSTM Stage 8\)
+* 情報収集 - ソースコードの開示、バイナリ、実装の詳細 \(FSTM ステージ 1 と整合\)
+* 構成とパッチ管理 - 古いソフトウェア、不要な機能 \(FSTM ステージ 5 と整合\)
+* シークレット - ハードコードされたクレデンシャル、暗号化されていないストレージ \(FSTM ストレージ 5 と整合\)
+* 暗号技術 - 脆弱なアルゴリズム、安全でない実装 \(FSTM ステージ 5 および 8 と整合\)
+* ファームウェア更新メカニズム \(**ISTG-FW\[UPDT\]**\) - 安全な OTA アップデート、署名検証
+* インストール済みファームウェア \(**ISTG-FW\[INST\]**\) - 実行時ファームウェアセキュリティ \(FSTM ステージ 8 と整合\)
 
-**When to Use Each Methodology:**
+**それぞれの手法を使用する場合:**
 
-* **Use FSTM** when you need deep technical guidance on firmware extraction, binary analysis, emulation, and exploitation
-* **Use ISTG** when you need a structured checklist covering the entire IoT device attack surface
-* **Use Both** for enterprise IoT security assessments requiring comprehensive coverage and standardized reporting
+* **FSTM を使用する** ファームウェア抽出、バイナリ解析、エミュレーション、エクスプロイトに関する詳細な技術的ガイダンスを必要とする場合
+* **ISTG を使用する** IoT デバイスの攻撃対象領域全体をカバーした構造化されたチェックリストを必要とする場合
+* **両方を使用する** 包括的なカバレッジと標準化されたレポートを必要とするエンタープライズ IoT セキュリティ評価向け
 
 #### **OWASP ISVS: Requirements-Driven Testing**
 
-The [OWASP IoT Security Verification Standard \(ISVS\)](https://github.com/OWASP/IoT-Security-Verification-Standard-ISVS) defines **WHAT** security controls must be implemented, while FSTM defines **HOW** to test firmware components. ISVS provides a requirements framework that can drive your firmware testing scope and success criteria.
+The [OWASP IoT Security Verification Standard \(ISVS\)](https://coky-t.gitbook.io/owasp-isvs-ja/) defines **WHAT** security controls must be implemented, while FSTM defines **HOW** to test firmware components. ISVS provides a requirements framework that can drive your firmware testing scope and success criteria.
 
 **ISVS Role in Firmware Testing:**
 
@@ -1042,10 +1042,10 @@ Step 4: Provide remediation mapped to ISVS controls
 
 **Resources:**
 
-* OWASP ISVS: [https://github.com/OWASP/IoT-Security-Verification-Standard-ISVS](https://github.com/OWASP/IoT-Security-Verification-Standard-ISVS)
-* OWASP ISTG: [https://owasp.org/owasp-istg/](https://owasp.org/owasp-istg/)
-* ISTG GitHub: [https://github.com/OWASP/owasp-istg](https://github.com/OWASP/owasp-istg)
-* ISTG Firmware Test Cases: [https://owasp.org/owasp-istg/03\_test\_cases/firmware/](https://owasp.org/owasp-istg/03_test_cases/firmware/)
+* OWASP ISVS (日本語版): [https://coky-t.gitbook.io/owasp-isvs-ja/](https://coky-t.gitbook.io/owasp-isvs-ja/)
+* OWASP ISTG (日本語版): [https://coky-t.gitbook.io/owasp-istg-ja/](https://coky-t.gitbook.io/owasp-istg-ja/)
+* ISTG GitHub (日本語版): [https://github.com/coky-t/owasp-istg-ja](https://github.com/coky-t/owasp-istg-ja)
+* ISTG Firmware Test Cases (日本語版): [https://coky-t.gitbook.io/owasp-istg-ja/owasp-iot-sekyurititesutogaido/03_test_cases/firmware](https://coky-t.gitbook.io/owasp-istg-ja/owasp-iot-sekyurititesutogaido/03_test_cases/firmware)
 * OWASP IoT Project: [https://owasp.org/www-project-internet-of-things/](https://owasp.org/www-project-internet-of-things/)
 
 ### **ファームウェアおよびバイナリ解析ツールのインデックス**
