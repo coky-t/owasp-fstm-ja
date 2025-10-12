@@ -614,16 +614,16 @@ SBOM 出力は EMBA の HTML レポートに含まれており、標準形式 \(
 
 参照: [https://www.cisa.gov/sbom](https://www.cisa.gov/sbom)
 
-##### SBOM Tools and Formats
+##### SBOM ツールとフォーマット
 
-While EMBA provides comprehensive SBOM generation for firmware, other complementary tools include:
+EMBA はファームウェアに対する包括的な SBOM 生成を提供していますが、その他にも以下の補完ツールがあります。
 
-* **Syft** - CLI tool for generating SBOMs from container images and filesystems
-* **Tern** - Inspection tool for containers to generate SBOM reports
-* **CycloneDX** - Lightweight SBOM standard designed for application security
-* **SPDX** - Standard format for communicating software component information
+* **Syft** - コンテナイメージとファイルシステムから SBOM を生成するための CLI ツール
+* **Tern** - SBOM レポートを生成するコンテナ検査ツール
+* **CycloneDX** - アプリケーションセキュリティ向けに設計された軽量 SBOM 標準
+* **SPDX** - ソフトウェアコンポーネント情報を通信するための標準フォーマット
 
-For firmware security assessments, EMBA's integrated approach is recommended as it combines SBOM generation with vulnerability analysis, binary security testing, and emulation capabilities in a single workflow.
+ファームウェアセキュリティ評価には、SBOM 生成、脆弱性解析、バイナリセキュリティテスト、エミュレーション機能を単一のワークフローに統合した EMBA の統合アプローチが推奨されます。
 
 ### **\[ステージ 6\] ファームウェアのエミュレート**
 
