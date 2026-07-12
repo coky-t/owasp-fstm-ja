@@ -2,7 +2,7 @@
 
 This is the unofficial Japanese translation of the [OWASP Firmware Security Testing Methodology](https://github.com/scriptingxss/owasp-fstm).
 
-- Document Site - <https://coky-t.gitbook.io/owasp-fstm-ja/>
+<!-- - Document Site - <https://coky-t.gitbook.io/owasp-fstm-ja/> -->
 - Document Repository - <https://github.com/coky-t/owasp-fstm-ja>
 
 ### Originator
@@ -22,5 +22,5 @@ This is the unofficial Japanese translation of the [OWASP Firmware Security Test
 
 [Koki Takeyama](https://github.com/coky-t)
 
-- Document Site - <https://coky-t.gitbook.io/owasp-docs-ja/>
+<!-- - Document Site - <https://coky-t.gitbook.io/owasp-docs-ja/> -->
 - Document Repository - <https://github.com/coky-t/owasp-docs-ja>
